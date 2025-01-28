@@ -49,7 +49,13 @@ class SudokuGenerator:
         if self.checkRow(row, col, num) == False:
             for i in range(9):
                 if self.board[row][i] == num and i != col:
-                    
+                    self.backtrack(row, i, random.randint(1,9))
+        if self.checkCol(row, col, num) == False:
+            for i in range(9):
+                if self.board[i][col] == num and i != row:
+                    self.backtrack(i, col, random.randint(1,9))
+        if self.checkBox(row, col, num) == False:
+            
             
                     
         
